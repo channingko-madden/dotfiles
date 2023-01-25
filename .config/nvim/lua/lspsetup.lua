@@ -1,5 +1,12 @@
--- Set up language servers
+-- Set up mason package manager first
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {"eslint"}
+})
+-- Set up language servers next
 require'lspconfig'.pyright.setup{}
+require'lspconfig'.ccls.setup{}
+-- require'lspconfig'.eslint.setup{}
 
 --- Nicer LSP UI
 local saga = require 'lspsaga'
@@ -7,6 +14,7 @@ local saga = require 'lspsaga'
 -- Configure language server
 -- https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 local nvim_lsp = require('lspconfig')
+
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -41,9 +49,23 @@ local on_attach = function(client, bufnr)
 
 end
 
+-- configure tsserver
+ nvim_lsp.tsserver.setup {
+     on_attach = on_attach,
+     filetypes = {"typescript", "typescriptreact", "typescript.tsx"},
+     cmd = {"typescript-language-server", "--stdio"},
+ }
+
+-- configure eslint server
+nvim_lsp.eslint.setup {
+    on_attach = on_attach,
+    filetypes = {"javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue", "svelte", "astro"},
+    cmd = {"vscode-eslint-language-server", "--stdio"},
+}
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright" }
+local servers = { "pyright", "eslint" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,

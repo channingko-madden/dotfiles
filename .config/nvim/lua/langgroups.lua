@@ -40,7 +40,7 @@ vim.api.nvim_command([[
 augroup CppStuff
 autocmd BufNewFile,BufReadPost *.cpp,*.h,*.ino,*.pde,*.c,*.xbm set filetype=cpp
 autocmd FileType cpp set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType cpp set colorcolumn=80
+autocmd FileType cpp set colorcolumn=120
 autocmd FileType cpp set showmatch
 autocmd FileType cpp highlight ColorColumn
 autocmd FileType cpp set comments=sl:/*,mb:\ *,elx:\ */
