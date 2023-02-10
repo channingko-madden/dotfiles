@@ -9,13 +9,17 @@
               "directory": "/tmp/ccls"
             },
             "clang": {
+                "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0",
                 "extraArgs": [
+                    "isystem",
+                    "/Library/Developer/CommandLineTools/usr/include/c++/v1",
                     "-I",
-                    "/opt/ros/foxy/include/",
-                    "-std=c++17"
+                    "-std=c++14"
                 ]
             }
           }
       }
-    }
+    },
+    "coc.preferences.jumpCommand": "tabe",
+    "suggest.noselect": true
 }

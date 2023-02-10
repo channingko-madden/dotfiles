@@ -71,10 +71,12 @@ set laststatus=2
 
 " enable 256 colors
 set t_Co=256
-set t_ut=
+"set t_ut=
 
 " turn on line numbering
 set number
+" decrease message sizes
+set shortmess=a
 
 " highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -90,15 +92,23 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " sane editing
-set expandtab " set in langgroups.lua in the future
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set colorcolumn=120
 set viminfo='25,\"50,n~/.viminfo
-set tw=119
-set autoindent
-set smartindent
+
+" color scheme
+colorscheme nord
+" filetype on
+
+" lightline
+set noshowmode
+let g:lightline = { 'colorscheme': 'nord' }
+
+" Nord configurations
+let g:nord_cursor_line_number_background = 1
+
+
+" code folding
+"set foldmethod=indent
+"set foldlevel=99
 
 " word movement
 imap <S-Left> <Esc>bi
@@ -126,24 +136,6 @@ function ToggleMouse()
         let g:is_mouse_enabled = 1
     endif
 endfunction
-
-" color scheme
-syntax on
-colorscheme nord
-filetype on
-filetype plugin indent on
-
-" lightline
-set noshowmode
-let g:lightline = { 'colorscheme': 'nord' }
-
-" Nord configurations
-let g:nord_cursor_line_number_background = 1
-
-
-" code folding
-"set foldmethod=indent
-"set foldlevel=99
 
 " wrap toggle
 setlocal nowrap
@@ -265,6 +257,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" go to definition in new tab
+nmap <buffer> gD :tab <Plug>(coc-definition) 
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call ShowDocumentation()<CR>

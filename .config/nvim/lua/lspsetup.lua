@@ -1,7 +1,7 @@
 -- Set up mason package manager first
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = {"eslint"}
+    ensure_installed = {"eslint", "pyright"}
 })
 -- Set up language servers next
 require'lspconfig'.pyright.setup{}
