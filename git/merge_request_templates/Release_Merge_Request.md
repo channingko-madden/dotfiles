@@ -2,11 +2,8 @@
 A brief description of the features or reason for this release merge request
 
 ## Reminders
+- [ ] Version is updated?
 - [ ] CHANGELOG is updated?
-- [ ] ccm_config.yaml is updated?
-
-## Status
-- [ ] Ready for Review
 
 ## Types of Changes
 - [ ] Bug fix (non-breaking change which fixes an issue)

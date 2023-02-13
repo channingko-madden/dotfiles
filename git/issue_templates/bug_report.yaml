@@ -1,0 +1,35 @@
+name: Bug Report
+description: Create an issue for a bug report.
+title: "[Bug]: - <title>"
+labels: [
+  "bug"
+]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: Summarize the bug encountered concisely
+      placeholder: This bug occured when ... and caused ...
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected Behavior"
+      description: What is the expected correct behavior?
+      placeholder: The program should ...
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Reproduction steps"
+      description: Please enter an explicit description on how to reproduce the bug
+      value: |
+        1. Go to '...'
+        2. Run with '....'
+        3. See error
+      render: bash
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs"
+      description: Please copy and paste any relevant log output.
+      render: bash
