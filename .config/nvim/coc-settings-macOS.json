@@ -9,12 +9,12 @@
               "directory": "/tmp/ccls"
             },
             "clang": {
-                "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0",
+                "resourceDir": "/Library/Developer/CommandLineTools/usr/lib/clang/14.0.3",
                 "extraArgs": [
                     "isystem",
                     "/Library/Developer/CommandLineTools/usr/include/c++/v1",
                     "-I",
-                    "-std=c++14"
+                    "-std=c++17"
                 ]
             }
           }
