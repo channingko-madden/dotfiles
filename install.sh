@@ -18,10 +18,11 @@ brew install gcc
 
 # install neovim
 brew install neovim
+# alias vim to nvim
+(echo; echo 'alias vim="nvim"') >> ~/.bashrc
 
 # install kitty terminal
 #brew install --cask kitty
 
-# symlink config files for neovim and kitty
-ln -s .config/nvim ~/.config/nvim
-#ln -s .config/kitty ~/.config/kitty
+# copy config files for neovim
+cp -r .config/nvim ~/.config/nvim
