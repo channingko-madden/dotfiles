@@ -10,7 +10,7 @@
 
 if [ -z "$1" ]; then
 	echo "Need to pass the name of the repo as the first cli arg"
-	return 1
+	exit 1
 fi
 
 cd $1
