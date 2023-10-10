@@ -26,3 +26,7 @@ brew install neovim
 
 # copy config files for neovim
 cp -r .config/nvim ~/.config/nvim
+
+# set git config settings
+git config --global commit.template $PWD/git/commit_template.txt
+git config --global core.editor nvim
