@@ -5,8 +5,13 @@
 #
 # Codespaces home directory is /home/vscode/
 
-# install homebrew
-sudo apt-get install build-essential # install dependencies
+sudo apt update
+
+# install kitty-terminfo so ssh from kitty works correctly
+sudo apt install kitty-terminfo
+
+# install homebrew to manage nvim package
+sudo apt install build-essential # install dependencies
 # install homebrew
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
 # Add homebrew to path and .bashrc
