@@ -5,4 +5,4 @@ Channing's dotfiles
 Git related template files
 
 # .config
-Neovim & Vim config files
+Config files
