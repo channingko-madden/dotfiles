@@ -10,6 +10,9 @@ sudo apt update
 # install kitty-terminfo so ssh from kitty works correctly
 sudo apt install kitty-terminfo
 
+# install python3-venv for python lsp
+sudo apt install python3-venv
+
 # install homebrew to manage nvim package
 sudo apt install build-essential # install dependencies
 # install homebrew
@@ -25,6 +28,8 @@ brew install gcc
 brew install neovim
 # alias vim to nvim
 (echo; echo 'alias vim="nvim"') >> ~/.bashrc
+# install ripgrep 
+brew install ripgrep
 
 # install kitty terminal
 #brew install --cask kitty
@@ -35,3 +40,6 @@ cp -r .config/nvim ~/.config/nvim
 # set git config settings
 git config --global commit.template $PWD/git/commit_template.txt
 git config --global core.editor nvim
+
+# add git autocomplete to bashrc
+(echo; echo 'source /usr/share/bash-completion/completions/git') >> ~/.bashrc
