@@ -8,13 +8,13 @@
 sudo apt update
 
 # install kitty-terminfo so ssh from kitty works correctly
-sudo apt install kitty-terminfo
+sudo apt -y install kitty-terminfo
 
 # install python3-venv for python lsp
-sudo apt install python3-venv
+sudo apt -y install python3-venv
 
 # install homebrew to manage nvim package
-sudo apt install build-essential # install dependencies
+sudo apt -y install build-essential # install dependencies
 # install homebrew
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
 # Add homebrew to path and .bashrc
