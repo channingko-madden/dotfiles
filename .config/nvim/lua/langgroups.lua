@@ -27,7 +27,6 @@ local function yamlLuaTypeCallback()
     set smartindent
     set tw=99
     set showmatch
-    highlight ColorColumn cterm=reverse ctermbg=7 guibg=LightBlue
     set nofoldenable
     ]])
 end
@@ -35,13 +34,13 @@ end
 local idegrp = vim.api.nvim_create_augroup("ide_stuff", { clear = true})
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
-    pattern = {"*.ino","*.pde","*.c","*.xbm", "*.cc"},
+    pattern = {"*.ino","*.pde","*.c","*.xbm", "*.cc", "*.h"},
     command = "set filetype=cpp",
     group = idegrp,
     }
 )
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"cpp", "python" },
+    pattern = {"cpp", "go", "rust" },
     callback = fileTypeCallback,
     group = idegrp,
     }
@@ -59,5 +58,5 @@ vim.api.nvim_create_autocmd("FileType", {
     }
 )
 
--- C++
---
+vim.wo.relativenumber = true -- relative line numbers!
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]]) -- map Esc in terminal mode to terminal exit

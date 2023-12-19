@@ -1,5 +1,6 @@
 return {
 
+--[[
 -- Kanagawa
 {
 'rebelot/kanagawa.nvim',
@@ -27,4 +28,20 @@ require('kanagawa').setup({
 vim.cmd.colorscheme 'kanagawa'
 end,
 }
+ --]]
+
+{
+  "craftzdog/solarized-osaka.nvim",
+  lazy = false,
+  priority = 1000,
+
+  config = function()
+  require('solarized-osaka').setup({
+    day_brightness = 0.5,
+  })
+  vim.cmd.colorscheme 'solarized-osaka'
+  end,
+}
+
+
 }
