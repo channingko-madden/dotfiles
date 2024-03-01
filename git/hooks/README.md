@@ -1,0 +1,6 @@
+# Git Hook Scripts
+
+## Setup
+Client-side hooks have to be manually set up by each developer, by
+copying the scripts within this folder to the .git/hooks folder, or 
+using the Makefile command `make install_commit_hooks`.

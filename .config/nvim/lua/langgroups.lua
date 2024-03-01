@@ -8,8 +8,7 @@ local function fileTypeCallback()
     vim.api.nvim_set_option_value("colorcolumn", "100", {})
     vim.api.nvim_command([[
     set tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-    set autoindent
-    set smartindent
+    set cindent
     set tw=99
     set showmatch
     set comments=sl:/*,mb:\ *,elx:\ */
@@ -23,7 +22,6 @@ local function yamlLuaTypeCallback()
     vim.api.nvim_set_option_value("colorcolumn", "100", {})
     vim.api.nvim_command([[
     set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-    set autoindent
     set smartindent
     set tw=99
     set showmatch
@@ -34,7 +32,7 @@ end
 local idegrp = vim.api.nvim_create_augroup("ide_stuff", { clear = true})
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
-    pattern = {"*.ino","*.pde","*.c","*.xbm", "*.cc", "*.h"},
+    pattern = {"*.ino", "*.pde", "*.c", "*.xbm", "*.cc", "*.h", "*.hpp"},
     command = "set filetype=cpp",
     group = idegrp,
     }
