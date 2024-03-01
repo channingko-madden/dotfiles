@@ -31,6 +31,18 @@ local function yamlLuaTypeCallback()
     ]])
 end
 
+local function goTypeCallback()
+    vim.api.nvim_set_option_value("colorcolumn", "100", {})
+    vim.api.nvim_command([[
+    set tabstop=8 shiftwidth=8 softtabstop=8 expandtab
+    set autoindent
+    set smartindent
+    set tw=99
+    set showmatch
+    set nofoldenable
+    ]])
+end
+
 local idegrp = vim.api.nvim_create_augroup("ide_stuff", { clear = true})
 
 vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
@@ -40,8 +52,14 @@ vim.api.nvim_create_autocmd({"BufNewFile", "BufReadPost"}, {
     }
 )
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"cpp", "go", "rust" },
+    pattern = {"cpp", "rust" },
     callback = fileTypeCallback,
+    group = idegrp,
+    }
+)
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "go",
+    callback = goTypeCallback,
     group = idegrp,
     }
 )
