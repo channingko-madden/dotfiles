@@ -5,6 +5,8 @@
 #
 # Codespaces home directory is /home/vscode/
 
+git submodule update --init --recursive
+
 sudo apt update
 
 # install kitty-terminfo so ssh from kitty works correctly
