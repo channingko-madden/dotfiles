@@ -1,4 +1,0 @@
-clang++
-%cpp -std=c++17
--Iinclude
--Ibuild/vcpkg_installed/x64-linux/include
