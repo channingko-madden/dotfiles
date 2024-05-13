@@ -5,8 +5,6 @@
 #
 # Codespaces home directory is /home/vscode/
 
-git submodule update --init --recursive
-
 sudo apt update
 
 # install kitty-terminfo so ssh from kitty works correctly
@@ -36,8 +34,8 @@ brew install neovim
 # install ripgrep 
 brew install ripgrep
 
-# copy config files for neovim
-cp -r .config/nvim ~/.config/nvim
+# clone config files for neovim
+git clone git@github.com:channingko-madden/kickstart.nvim.git ~/.config/nvim
 
 # set git config settings
 git config --global commit.template $PWD/git/commit_template.txt
