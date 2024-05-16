@@ -35,7 +35,7 @@ brew install neovim
 brew install ripgrep
 
 # clone config files for neovim
-git clone git@github.com:channingko-madden/kickstart.nvim.git ~/.config/nvim
+git clone https://github.com/channingko-madden/kickstart.nvim.git ~/.config/nvim
 
 # set git config settings
 git config --global commit.template $PWD/git/commit_template.txt
