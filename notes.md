@@ -1,10 +1,11 @@
 # notes
 
-## neovim
-
 Add to `.bashrc`
-- alias vim="nvim"
 
+```
+alias vim="nvim"
+export PS1="channing$ "
+```
 
 ## vcpkg
 Install/setup steps
