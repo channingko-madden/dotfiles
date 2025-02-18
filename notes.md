@@ -4,7 +4,13 @@ Add to `.bashrc`
 
 ```
 alias vim="nvim"
-export PS1="channing$ "
+export PS1="channing:\W "
+```
+
+Add to `.zshrc`
+```
+alias vim="nvim"
+export PS1="channing:%1~ "
 ```
 
 ## vcpkg
