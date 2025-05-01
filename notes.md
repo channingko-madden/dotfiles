@@ -10,7 +10,7 @@ export PS1="channing:\W "
 Add to `.zshrc`
 ```
 alias vim="nvim"
-export PS1="channing:%1~ "
+export PS1="channing %1~ $ "
 ```
 
 ## vcpkg
