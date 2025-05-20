@@ -3,28 +3,16 @@
 Add to `.bashrc`
 
 ```
-alias vim="nvim"
+alias vim='nvim'
 export PS1="channing:\W "
 ```
 
 Add to `.zshrc`
 ```
-alias vim="nvim"
+alias vim='nvim'
 export PS1="channing %1~ $ "
+autoload -U +X bashcompinit && bashcompinit
 ```
-
-## vcpkg
-Install/setup steps
-- ./vcpkg/bootstrap-vcpkg.sh -disableMetrics
-- ./vcpkg/vcpkg integrate install
-- ./vcpkg/vcpkg integrate zsh (or bash, etc.)
-
-### neovim/vcpkg
-To create the compile_commands.json:
-cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=1
-
-Manually adding the include paths: 
--Ibuild/vcpkg_installed/x64-linux/include
 
 ## go
 
